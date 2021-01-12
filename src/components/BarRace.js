@@ -1,4 +1,4 @@
-import BarRaceTest from "pages/tests/barRaceTest";
+import BarRaceTest from "pages/tests/BarRaceTest";
 
 export default function BarRace(props) {
     return (
