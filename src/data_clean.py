@@ -48,6 +48,7 @@ print("succeed!")
 # 医院数据
 data = pd.read_excel("NCP_RegMedHosSta.xlsx")
 data.drop(columns = "AreaCode",inplace=True)
-data.columns = ['地区名称','医疗救治医院数量']
+data.columns = ['name','value']
 data.drop(index=[0,1],inplace=True)
-data.to_excel("hospital.xlsx",index=False)
+data['name'] = data['name'].str.rstrip('市') 
+data.to_json("hospital.json",orient="table",index=False)
