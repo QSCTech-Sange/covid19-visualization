@@ -23,31 +23,15 @@ export default function GlobalTrend(props) {
         saveAsImage: {},
       },
     },
-    grid: {
-      top: 60,
-      left: 30,
-      right: 60,
-      bottom: 30,
-    },
     dataZoom: {
       show: false,
       start: 0,
       end: 100,
     },
-    visualMap: {
-      show: false,
-      min: 0,
-      max: 1000,
-      color: ['#BE002F', '#F20C00', '#F00056', '#FF2D51', '#FF2121', '#FF4C00', '#FF7500',
-        '#FF8936', '#FFA400', '#F0C239', '#FFF143', '#FAFF72', '#C9DD22', '#AFDD22',
-        '#9ED900', '#00E500', '#0EB83A', '#0AA344', '#0C8918', '#057748', '#177CB0']
-    },
     xAxis: [
       {
         type: 'time',
         boundaryGap: false,
-        // axisLabel: {
-        // }
       },
     ],
     yAxis: [
@@ -90,6 +74,7 @@ export default function GlobalTrend(props) {
         data: (() => {
           return data.date.map((v, i) => [v, data.new[i]]);
         })(),
+        yAxisIndex: 1,
       },
     ],
   });
