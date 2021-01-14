@@ -1,5 +1,6 @@
 import pandas as pd
 
+# 迁出数据
 filenames = ["NCP_EmigrRatioD{}.xlsx".format(i) for i in ["","1","2","3","4"]]
 
 data = dict()
@@ -21,6 +22,7 @@ result.to_json("cleaned/emigrate.json",index=False)
 print("succeed!")
 
 
+# 迁入数据
 filenames = ["NCP_ImmigrRatioD{}.xlsx".format(i) for i in ["","1","2","3","4","5"]]
 
 data = dict()
@@ -42,3 +44,10 @@ result.to_excel("cleaned/immigrate.json",index=False)
 result.reset_index(inplace=True)
 result.to_json("cleaned/emigrate.json")
 print("succeed!")
+
+# 医院数据
+data = pd.read_excel("NCP_RegMedHosSta.xlsx")
+data.drop(columns = "AreaCode",inplace=True)
+data.columns = ['地区名称','医疗救治医院数量']
+data.drop(index=[0,1],inplace=True)
+data.to_excel("hospital.xlsx",index=False)
