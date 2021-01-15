@@ -415,7 +415,7 @@ export default function HospitalNum(props) {
   return (
     <div className="hospital-num-comp">
       {option && (
-        <ReactEcharts option={option} style={{ height: props.height ?? 400 }} />
+        <ReactEcharts option={option} style={{ height: props.height ?? 800 }} />
       )}
     </div>
   );
