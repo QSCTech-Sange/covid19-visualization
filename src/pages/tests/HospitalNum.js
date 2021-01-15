@@ -1,7 +1,13 @@
-import HospitalNum from 'components/HospitalNum';
+import HospitalNum from "components/HospitalNum";
+import Head from "next/head";
 
 export default function HospitalNumTest() {
-    return (
-        <HospitalNum />
-    );
+  return (
+    <div>
+      <Head>
+        <script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"></script>
+      </Head>
+      <HospitalNum />
+    </div>
+  );
 }

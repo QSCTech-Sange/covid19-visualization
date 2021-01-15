@@ -1,4 +1,6 @@
 import ReactEcharts from "echarts-for-react";
+import 'echarts';
+import 'echarts/extension/bmap/bmap';
 import { useEffect, useState } from "react";
 import data from "./HospitalNum.json";
 
@@ -214,9 +216,6 @@ export default function HospitalNum(props) {
     return res;
   };
 
-  console.log("test convert data");
-  console.log(convertData(data));
-
   const initOption = () => ({
     title: {
       text: "全国医疗救治医院数量",
@@ -364,7 +363,7 @@ export default function HospitalNum(props) {
           show: false,
         },
         itemStyle: {
-          color: "purple",
+          color: "green",
         },
         emphasis: {
           label: {
@@ -400,7 +399,7 @@ export default function HospitalNum(props) {
           show: true,
         },
         itemStyle: {
-          color: "purple",
+          color: "green",
           shadowBlur: 10,
           shadowColor: "#333",
         },

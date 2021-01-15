@@ -8,10 +8,6 @@
       "value": 47
     },
     {
-      "name": "\u6cb3\u5317\u7701",
-      "value": 376
-    },
-    {
       "name": "\u77f3\u5bb6\u5e84",
       "value": 55
     },
@@ -54,10 +50,6 @@
     {
       "name": "\u8861\u6c34",
       "value": 14
-    },
-    {
-      "name": "\u5c71\u897f\u7701",
-      "value": 205
     },
     {
       "name": "\u592a\u539f",
@@ -156,10 +148,6 @@
       "value": 9
     },
     {
-      "name": "\u8fbd\u5b81\u7701",
-      "value": 228
-    },
-    {
       "name": "\u6c88\u9633",
       "value": 22
     },
@@ -216,10 +204,6 @@
       "value": 15
     },
     {
-      "name": "\u5409\u6797\u7701",
-      "value": 133
-    },
-    {
       "name": "\u957f\u6625",
       "value": 22
     },
@@ -258,10 +242,6 @@
     {
       "name": "\u5ef6\u8fb9\u671d\u9c9c\u65cf\u81ea\u6cbb\u5dde",
       "value": 11
-    },
-    {
-      "name": "\u9ed1\u9f99\u6c5f\u7701",
-      "value": 488
     },
     {
       "name": "\u54c8\u5c14\u6ee8",
@@ -320,10 +300,6 @@
       "value": 115
     },
     {
-      "name": "\u6c5f\u82cf\u7701",
-      "value": 768
-    },
-    {
       "name": "\u5357\u4eac",
       "value": 50
     },
@@ -376,10 +352,6 @@
       "value": 160
     },
     {
-      "name": "\u6d59\u6c5f\u7701",
-      "value": 323
-    },
-    {
       "name": "\u676d\u5dde",
       "value": 48
     },
@@ -422,10 +394,6 @@
     {
       "name": "\u4e3d\u6c34",
       "value": 19
-    },
-    {
-      "name": "\u5b89\u5fbd\u7701",
-      "value": 269
     },
     {
       "name": "\u5408\u80a5",
@@ -492,10 +460,6 @@
       "value": 19
     },
     {
-      "name": "\u798f\u5efa\u7701",
-      "value": 765
-    },
-    {
       "name": "\u798f\u5dde",
       "value": 202
     },
@@ -530,10 +494,6 @@
     {
       "name": "\u5b81\u5fb7",
       "value": 65
-    },
-    {
-      "name": "\u6c5f\u897f\u7701",
-      "value": 307
     },
     {
       "name": "\u5357\u660c",
@@ -578,10 +538,6 @@
     {
       "name": "\u4e0a\u9976",
       "value": 57
-    },
-    {
-      "name": "\u5c71\u4e1c\u7701",
-      "value": 541
     },
     {
       "name": "\u6d4e\u5357",
@@ -638,10 +594,6 @@
     {
       "name": "\u83cf\u6cfd",
       "value": 33
-    },
-    {
-      "name": "\u6cb3\u5357\u7701",
-      "value": 503
     },
     {
       "name": "\u90d1\u5dde",
@@ -716,10 +668,6 @@
       "value": 5
     },
     {
-      "name": "\u6e56\u5317\u7701",
-      "value": 677
-    },
-    {
       "name": "\u6b66\u6c49",
       "value": 70
     },
@@ -788,10 +736,6 @@
       "value": 1
     },
     {
-      "name": "\u6e56\u5357\u7701",
-      "value": 324
-    },
-    {
       "name": "\u957f\u6c99",
       "value": 46
     },
@@ -846,10 +790,6 @@
     {
       "name": "\u6e58\u897f\u571f\u5bb6\u65cf\u82d7\u65cf\u81ea\u6cbb\u5dde",
       "value": 17
-    },
-    {
-      "name": "\u5e7f\u4e1c\u7701",
-      "value": 885
     },
     {
       "name": "\u5e7f\u5dde",
@@ -996,10 +936,6 @@
       "value": 1
     },
     {
-      "name": "\u6d77\u5357\u7701",
-      "value": 316
-    },
-    {
       "name": "\u6d77\u53e3",
       "value": 27
     },
@@ -1078,10 +1014,6 @@
     {
       "name": "\u91cd\u5e86",
       "value": 141
-    },
-    {
-      "name": "\u56db\u5ddd\u7701",
-      "value": 1910
     },
     {
       "name": "\u6210\u90fd",
@@ -1168,10 +1100,6 @@
       "value": 49
     },
     {
-      "name": "\u8d35\u5dde\u7701",
-      "value": 1139
-    },
-    {
       "name": "\u8d35\u9633",
       "value": 35
     },
@@ -1200,16 +1128,8 @@
       "value": 152
     },
     {
-      "name": "\u9ed4\u4e1c\u5357\u82d7\u65cf\u4f97\u65cf\u81ea\u6cbb\u5dde",
-      "value": 210
-    },
-    {
       "name": "\u9ed4\u5357\u5e03\u4f9d\u65cf\u82d7\u65cf\u81ea\u6cbb\u5dde",
       "value": 168
-    },
-    {
-      "name": "\u4e91\u5357\u7701",
-      "value": 350
     },
     {
       "name": "\u6606\u660e",
@@ -1308,10 +1228,6 @@
       "value": 1
     },
     {
-      "name": "\u9655\u897f\u7701",
-      "value": 354
-    },
-    {
       "name": "\u897f\u5b89",
       "value": 86
     },
@@ -1350,10 +1266,6 @@
     {
       "name": "\u5546\u6d1b",
       "value": 29
-    },
-    {
-      "name": "\u7518\u8083\u7701",
-      "value": 99
     },
     {
       "name": "\u5170\u5dde",
@@ -1410,10 +1322,6 @@
     {
       "name": "\u7518\u5357\u85cf\u65cf\u81ea\u6cbb\u5dde",
       "value": 8
-    },
-    {
-      "name": "\u9752\u6d77\u7701",
-      "value": 85
     },
     {
       "name": "\u897f\u5b81",
