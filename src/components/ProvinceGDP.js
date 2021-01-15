@@ -15,16 +15,16 @@ export default function ProvinceGDP(props) {
   };
 
   let sizeFunction = function (x) {
-    let y = Math.sqrt(x / 5e8) + 0.1;
+    let y = Math.sqrt(x / 1e4) + 0.1;
     return y * 80;
   };
 
   // Schema:
   let schema = [
-    { name: "Income", index: 0, text: "人均收入", unit: "美元" },
-    { name: "LifeExpectancy", index: 1, text: "人均寿命", unit: "岁" },
-    { name: "Population", index: 2, text: "总人口", unit: "" },
-    { name: "Country", index: 3, text: "国家", unit: "" },
+    { name: "Primary", index: 0, text: "地区生产总值-第一产业", unit: "亿元" },
+    { name: "Secondary", index: 1, text: "地区生产总值-第二产业", unit: "亿元" },
+    { name: "Tertiary", index: 2, text: "地区生产总值-第三产业", unit: "亿元" },
+    { name: "Province", index: 3, text: "省份", unit: "" },
   ];
 
   const initOption = function () {
@@ -84,7 +84,7 @@ export default function ProvinceGDP(props) {
             },
           },
           {
-            text: "各国人均寿命与GDP关系演变",
+            text: "各省份产业结构转变",
             left: "center",
             top: 10,
             textStyle: {
@@ -130,10 +130,10 @@ export default function ProvinceGDP(props) {
           right: "110",
         },
         xAxis: {
-          type: "log",
-          name: "人均收入",
-          max: 100000,
-          min: 300,
+          type: "value",
+          name: "第一产业",
+          max: 5000,
+          min: 1,
           nameGap: 25,
           nameLocation: "middle",
           nameTextStyle: {
@@ -148,13 +148,14 @@ export default function ProvinceGDP(props) {
             },
           },
           axisLabel: {
-            formatter: "{value} $",
+            formatter: "{value} 亿元",
           },
         },
         yAxis: {
           type: "value",
-          name: "平均寿命",
-          max: 100,
+          name: "第二产业",
+          max: 10000,
+          min: 1,
           nameTextStyle: {
             color: "#ccc",
             fontSize: 18,
@@ -168,14 +169,14 @@ export default function ProvinceGDP(props) {
             show: false,
           },
           axisLabel: {
-            formatter: "{value} 岁",
+            formatter: "{value} 亿元",
           },
         },
         visualMap: [
           {
             show: false,
             dimension: 3,
-            categories: data.counties,
+            categories: data.Province,
             calculable: true,
             precision: 0.1,
             textGap: 30,
@@ -184,7 +185,7 @@ export default function ProvinceGDP(props) {
             },
             inRange: {
               color: (function () {
-                var colors = [
+                let colors = [
                   "#bcd3bb",
                   "#e88f70",
                   "#edc1a5",
@@ -245,7 +246,7 @@ export default function ProvinceGDP(props) {
   return (
     <div className="Province-GDP-comp">
       {option && (
-        <ReactEcharts option={option} style={{ height: props.height ?? 400 }} />
+        <ReactEcharts option={option} style={{ height: props.height ?? 1000 }} />
       )}
     </div>
   );
