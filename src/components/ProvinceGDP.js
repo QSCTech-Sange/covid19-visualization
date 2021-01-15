@@ -15,8 +15,8 @@ export default function ProvinceGDP(props) {
   };
 
   let sizeFunction = function (x) {
-    let y = Math.sqrt(x / 1e4) + 0.1;
-    return y * 80;
+    let y = Math.sqrt(x / 8e3) + 0.1;
+    return y * 90;
   };
 
   // Schema:
@@ -76,8 +76,8 @@ export default function ProvinceGDP(props) {
           {
             text: data.timeline[0],
             textAlign: "center",
-            left: "63%",
-            top: "55%",
+            left: "83%",
+            top: "75%",
             textStyle: {
               fontSize: 100,
               color: "rgba(255, 255, 255, 0.7)",
@@ -102,25 +102,10 @@ export default function ProvinceGDP(props) {
           formatter: function (obj) {
             var value = obj.value;
             return (
-              schema[3].text +
-              "：" +
-              value[3] +
-              "<br>" +
-              schema[1].text +
-              "：" +
-              value[1] +
-              schema[1].unit +
-              "<br>" +
-              schema[0].text +
-              "：" +
-              value[0] +
-              schema[0].unit +
-              "<br>" +
-              schema[2].text +
-              "：" +
-              value[2] +
-              "<br>"
-            );
+              schema[3].text + "：" + value[3] + "<br>" +
+              schema[0].text + "：" + value[0] + schema[0].unit + "<br>" +
+              schema[1].text + "：" + value[1] + schema[1].unit + "<br>" +
+              schema[2].text + "：" + value[2] + schema[2].unit + "<br>");
           },
         },
         grid: {
@@ -132,7 +117,7 @@ export default function ProvinceGDP(props) {
         xAxis: {
           type: "value",
           name: "第一产业",
-          max: 5000,
+          max: 6000,
           min: 1,
           nameGap: 25,
           nameLocation: "middle",
@@ -154,7 +139,7 @@ export default function ProvinceGDP(props) {
         yAxis: {
           type: "value",
           name: "第二产业",
-          max: 10000,
+          max: 45000,
           min: 1,
           nameTextStyle: {
             color: "#ccc",
@@ -196,6 +181,13 @@ export default function ProvinceGDP(props) {
                   "#f0b489",
                   "#928ea8",
                   "#bda29a",
+                  "#bcd378",
+                  "#bc8f70",
+                  "#7bb468",
+                  "#f0b4bb",
+                  "#e1e8a5",
+                  "#e8c168",
+                  "#e8e1d8",
                 ];
                 return colors.concat(colors);
               })(),

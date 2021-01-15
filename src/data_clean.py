@@ -56,17 +56,19 @@ data.to_json("hospital.json",orient="table",index=False)
 
 # 产业数据
 data = pd.read_excel("NCP_ProvincialGDP.xlsx")
-data.drop(index=[0,1],inplace=True)
+data.drop(index=[0,1,2],inplace=True)
 data.columns = ['年度标识', '省份编码', '省份名称', '地区生产总值-第一产业', '地区生产总值-第二产业', '地区生产总值-第三产业']
 data.drop(columns=['省份编码'],inplace=True)
 data.columns = ['year','province','one','two','three']
-data.reindex(columns=['one','two','three','province','year']) 
+data = data.reindex(columns=['one','two','three','province','year']) 
 data = data[data['province'] != '中国']
-data.to_json('provinceGDP.json',orient='table',index=False)
-file = read('provinceGDP.json')
+data.dropna(inplace=True)
+data.sort_values(['year','province'],inplace=True)
+data.to_json('provinceGDP2.json',orient='table',index=False)
+file = open('provinceGDP2.json')
 data = file.read()
 c = eval(data)
-years = [i for i in range(1952,2020)]
+years = [i for i in range(1952,2021)]
 series_data = [[] for i in range(len(years))]
 for i,year in enumerate(years):
     for j in c:
