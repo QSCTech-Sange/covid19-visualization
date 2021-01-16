@@ -1,31 +1,19 @@
 import dynamic from "next/dynamic";
 
 // disable ssr on AntV
-const MapboxScene = dynamic(() => import("@antv/l7-react/lib/component/MapboxScene"), { ssr: false });
-const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.LineLayer), { ssr: false });
-
-import {useState, useEffect} from "react";
+const MapboxScene = dynamic(() => import("@antv/l7-react/lib/component/MapboxScene"), {ssr: false});
+const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.LineLayer), {ssr: false});
 
 export default function Migration(props) {
-    const [geoData, setGeoData] = useState()
-
-    useEffect(() => {
-        const fetchData = async () => {
-            const [data] = await Promise.all([
-                fetch(
-                    'https://gw.alipayobjects.com/os/rmsportal/UEXQMifxtkQlYfChpPwT.txt',
-                ).then((d) => {
-                    return d.text()
-                }),
-            ]);
-            console.log(data)
-            setGeoData(data)
-            console.log(geoData)
-        };
-        fetchData().then(() => {
-            console.log(geoData)
-        })
-    }, [])
+    const data = [
+        {
+            id: '1',
+            coordinates: [
+                [101.953125, 50.51342652633956],
+                [119.17968749999999, 33.137551192346145],
+            ],
+        },
+    ];
 
     return (
         <div className="migration">
@@ -33,20 +21,18 @@ export default function Migration(props) {
                 option={{}}
                 map={{
                     style: 'dark',
-                    center: [112, 20],
+                    center: [112, 40],
+                    pitch: 45,
+                    zoom: 3,
                     token: 'pk.eyJ1IjoiemVuZ2Nob25nIiwiYSI6ImNrankxejBrMTA0ajYydXA4eXE4YmhnN2MifQ.0NVFgToOPeT5WKKZjC0--A',
                 }}
             >
-                {geoData !== undefined && <LineLayer
+                {data && <LineLayer
                     source={{
-                        geoData,
+                        data,
                         parser: {
-                            type: "csv",
-                            x: "lng1",
-                            y: "lat1",
-                            x1: "lng2",
-                            y1: "lat2",
-                            // size: "value"
+                            type: "json",
+                            coordinates: 'coordinates',
                         }
                     }}
                     color={{
