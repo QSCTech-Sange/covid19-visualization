@@ -32,9 +32,9 @@ export default function ProvinceCase(props) {
   }, []);
 
   return (
-    <div className="province-case-comp">
+    <div className="province-case-comp" style={{ height: '100%' }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: props.height ?? 800 }} />
+        <ReactEcharts option={option} style={{ height: 'calc(100% - 40px)'}} />
       )}
     </div>
   );

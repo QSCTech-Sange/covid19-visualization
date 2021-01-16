@@ -55,26 +55,29 @@ export default function TopTen(props) {
   });
 
   useState(() => {
-    countries = Object.keys(data);
-    countryColors = countries.map(() => '#' + Math.random().toString(16).substr(2, 6));
-    length = data[countries[0]].length;
+    try {
+      countries = Object.keys(data);
+      countryColors = countries.map(() => '#' + Math.random().toString(16).substr(2, 6));
+      length = data[countries[0]].length;
 
-    i = 0;
-    let dayRank = countries.map((v, j) => [v, data[v][i][1], countryColors[j]]).sort((a, b) => b[1] - a[1]);
-    dayRank.shift();
-    setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, 10).reverse()));
-    ++i;
-
-    timeTicket = setInterval(() => {
+      i = 0;
       let dayRank = countries.map((v, j) => [v, data[v][i][1], countryColors[j]]).sort((a, b) => b[1] - a[1]);
       dayRank.shift();
       setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, 10).reverse()));
       ++i;
-      // 后面的数据洗错了，干脆不要了 XD
-      if (i === length - 5) {
-        clearInterval(timeTicket);
-      }
-    }, animationInterval);
+
+      timeTicket = setInterval(() => {
+        let dayRank = countries.map((v, j) => [v, data[v][i][1], countryColors[j]]).sort((a, b) => b[1] - a[1]);
+        dayRank.shift();
+        setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, 10).reverse()));
+        ++i;
+        // 后面的数据洗错了，干脆不要了 XD
+        if (i === length - 5) {
+          clearInterval(timeTicket);
+        }
+      }, animationInterval);
+    }
+    catch (e) {}
   }, []);
 
   return (

@@ -62,9 +62,9 @@ export default function AgePatients(props) {
   }, []);
 
   return (
-    <div className="age-patients-comp">
+    <div className="age-patients-comp" style={{ height: '100%' }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: props.height ?? 800 }} />
+        <ReactEcharts option={option} style={{ height: 'calc(100% - 40px)'}} />
       )}
     </div>
   );

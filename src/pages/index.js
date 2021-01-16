@@ -1,5 +1,4 @@
 import Head from 'next/head'
-import styles from '../styles/Home.module.css'
 import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
 import GridLayout from 'react-grid-layout';
 
@@ -9,17 +8,21 @@ import TopTen from "../components/TopTen";
 import ProvinceGDP from "../components/ProvinceGDP";
 import Migration from "../components/Migration";
 import GlobalTrend from "../components/GlobalTrend";
-import { Card } from 'antd';
+import AgePatients from "../components/AgePatients";
+import ProvinceCase from "../components/ProvinceCase";
+import {Card, PageHeader} from 'antd';
 
 import 'antd/dist/antd.css';
+import styles from '../styles/Home.module.css'
 
 export default function Home() {
     const layout = [
-        {i: 'a', x: 0, y: 0, w: 9, h: 20,},
-        {i: 'b', x: 10, y: 0, w: 10, h: 20,},
-        {i: 'c', x: 10, y: 10, w: 10, h: 10},
-        {i: 'd', x: 10, y: 10, w: 10, h: 10},
-        {i: 'e', x: 10, y: 10, w: 10, h: 10}
+        {i: 'a', x: 12, y: 0, w: 10, h: 13,},
+        {i: 'b', x: 0, y: 0, w: 12, h: 19, static: true},
+        {i: 'c', x: 0, y: 20, w: 8, h: 13},
+        {i: 'd', x: 8, y: 20, w: 4, h: 13},
+        {i: 'e', x: 12, y: 13, w: 10, h: 9},
+        {i: 'f', x: 12, y: 22, w: 10, h: 10}
     ];
 
     const style = {
@@ -40,9 +43,15 @@ export default function Home() {
 
       <main className={styles.main}>
           <div style={style}>
+              <PageHeader
+                  className="site-page-header"
+                  title="疫情可视化"
+                  subTitle="我要卷爆"
+                  style={{ fontcolor: 'white' }}
+              />
               <GridLayout className="layout" layout={layout} cols={30} rowHeight={30} width={3000}>
                   <div key="a">
-                      <Card title="世界累计感染人数" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="世界累计感染人数" extra={<a href="/tests/TopTen">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                               <TopTen />
                           </p>
@@ -62,6 +71,20 @@ export default function Home() {
                       <Card title="全球疫情趋势" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                             <GlobalTrend />
+                          </p>
+                      </Card>
+                  </div>
+                  <div key="e">
+                      <Card title="各省感染年龄分布" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                          <p style={{ height: '100%' }}>
+                              <AgePatients />
+                          </p>
+                      </Card>
+                  </div>
+                  <div key="f">
+                      <Card title="各地区感染人数" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                          <p style={{ height: '100%' }}>
+                              <ProvinceCase />
                           </p>
                       </Card>
                   </div>

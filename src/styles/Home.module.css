@@ -124,3 +124,12 @@
 .ant-card-body {
   height: 100%;
 }
+
+.ant-page-header-heading-title {
+  color: white;
+}
+
+.site-page-header-ghost-wrapper {
+  background-color: #f5f5f5;
+  padding: 24px;
+}

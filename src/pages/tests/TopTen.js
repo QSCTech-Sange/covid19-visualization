@@ -4,6 +4,8 @@ const ClientTopTen = dynamic(() => import('components/TopTen'), { ssr: false });
 
 export default function TopTenTest() {
     return (
-        <ClientTopTen />
+        <div style={{ height: '800px' }}>
+            <ClientTopTen />
+        </div>
     );
 }
