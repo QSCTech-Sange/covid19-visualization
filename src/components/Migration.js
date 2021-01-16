@@ -49,6 +49,11 @@ export default function Migration(props) {
                             color: 'red',
                         },
                     }}
+                    animate={{
+                        duration: 4,
+                        interval: 0.2,
+                        trailLength: 0.3,
+                    }}
                 />}
             </MapboxScene>
         </div>
