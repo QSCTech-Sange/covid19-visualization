@@ -7,58 +7,12 @@ const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").the
 const PointLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.PointLayer), {ssr: false});
 
 import data from './huge_json2.json'
-// import hospitals from './hospital_json.json'
+import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
     const [showMigrate, setShowMigrate] = useState(true)
     const [showHospitals, setShowHospitals] = useState(false)
 
-    const new_test_data = [
-        {
-            lng: 114.345,
-            lat: 31.455,
-            lng2: 112.345,
-            lat2: 30.455,
-            value: 10,
-        },
-        {
-            lng: 134.345,
-            lat: 31.455,
-            lng2: 132.345,
-            lat2: 30.455,
-            value: 10,
-        },
-        {
-            lng: 132.345,
-            lat: 37.455,
-            lng2: 112.345,
-            lat2: 30.455,
-            value: 10,
-        },
-    ];
-    // const hospitals = [
-    //     {
-    //         lng: 114.345,
-    //         lat: 31.455,
-    //     }
-    // ]
-    const new_data = [
-        {
-            lng: 114.345,
-            lat: 31.455,
-            value: 10,
-        },
-        {
-            lng: 134.345,
-            lat: 31.455,
-            value: 10,
-        },
-        {
-            lng: 132.345,
-            lat: 37.455,
-            value: 10,
-        },
-    ];
 
     return (
         <div className="migration">
@@ -74,7 +28,7 @@ export default function Migration(props) {
             >
                 {showMigrate && data && <LineLayer
                     source={{
-                        new_test_data,
+                        hospitals,
                         parser: {
                             type: "json",
                             x: 'lng',
@@ -103,9 +57,9 @@ export default function Migration(props) {
                         trailLength: 0.3,
                     }}
                 />}
-                {showHospitals && new_data && <PointLayer
+                {showHospitals && hospitals && <PointLayer
                     source={{
-                        new_test_data,
+                        hospitals,
                         parser: {
                             type: "json",
                             x: 'lng',
