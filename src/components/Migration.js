@@ -4,30 +4,32 @@ import dynamic from "next/dynamic";
 const MapboxScene = dynamic(() => import("@antv/l7-react/lib/component/MapboxScene"), {ssr: false});
 const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.LineLayer), {ssr: false});
 
+import data from './huge_json2.json'
+
 export default function Migration(props) {
-    const data = [
-        {
-            lng1: 114.345,
-            lat1: 31.455,
-            lng2: 112.345,
-            lat2: 30.455,
-            value: 10,
-        },
-        {
-            lng1: 134.345,
-            lat1: 31.455,
-            lng2: 132.345,
-            lat2: 30.455,
-            value: 10,
-        },
-        {
-            lng1: 132.345,
-            lat1: 37.455,
-            lng2: 112.345,
-            lat2: 30.455,
-            value: 10,
-        },
-    ];
+    // const data = [
+    //     {
+    //         lng1: 114.345,
+    //         lat1: 31.455,
+    //         lng2: 112.345,
+    //         lat2: 30.455,
+    //         value: 10,
+    //     },
+    //     {
+    //         lng1: 134.345,
+    //         lat1: 31.455,
+    //         lng2: 132.345,
+    //         lat2: 30.455,
+    //         value: 10,
+    //     },
+    //     {
+    //         lng1: 132.345,
+    //         lat1: 37.455,
+    //         lng2: 112.345,
+    //         lat2: 30.455,
+    //         value: 10,
+    //     },
+    // ];
 
     return (
         <div className="migration">
@@ -48,7 +50,7 @@ export default function Migration(props) {
                             type: "json",
                             x: 'lng1',
                             y: 'lat1',
-                            x1: 'lng1',
+                            x1: 'lng2',
                             y1: 'lat2',
                         }
                     }}
