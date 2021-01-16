@@ -77,3 +77,16 @@ for i,year in enumerate(years):
             series_data[i].append(list(j.values()))
 d = open('test3.txt',mode='x',encoding='utf-8')
 d.write(str(series_data))
+
+# 患者数据
+data = pd.read_excel("NCP_CnfrmdActTrack.xlsx")
+data.drop(index=[0,1,2],inplace=True)
+data.columns = ['省份代码', '省份名称', '城市代码', '城市名称', '县/区代码', '县/区名称','发布时间','病患编号','病患','性别','年龄']
+data.drop(columns = ['省份代码','省份名称','城市代码','城市名称','县/区代码','县/区名称','病患编号','病患','性别'],inplace=True)
+data['发布时间'] = pd.to_datetime(data['发布时间'])
+data = data.assign(年龄段 = pd.cut(data['年龄'], bins=[i for i in range(0,110,20)],labels = ['儿童','青壮年','中年','中老年','老年']))
+data.drop(columns=['年龄'],inplace=True)
+data['发布时间'] = data['发布时间'].dt.date
+a = data.value_counts()
+a = a.sort_index()
+a.to_json('test.json',orient='table')
