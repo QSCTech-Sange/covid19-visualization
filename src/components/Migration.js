@@ -7,11 +7,25 @@ const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").the
 export default function Migration(props) {
     const data = [
         {
-            id: '1',
-            coordinates: [
-                [101.953125, 50.51342652633956],
-                [119.17968749999999, 33.137551192346145],
-            ],
+            lng1: 114.345,
+            lat1: 31.455,
+            lng2: 112.345,
+            lat2: 30.455,
+            value: 10,
+        },
+        {
+            lng1: 134.345,
+            lat1: 31.455,
+            lng2: 132.345,
+            lat2: 30.455,
+            value: 10,
+        },
+        {
+            lng1: 132.345,
+            lat1: 37.455,
+            lng2: 112.345,
+            lat2: 30.455,
+            value: 10,
         },
     ];
 
@@ -32,7 +46,10 @@ export default function Migration(props) {
                         data,
                         parser: {
                             type: "json",
-                            coordinates: 'coordinates',
+                            x: 'lng1',
+                            y: 'lat1',
+                            x1: 'lng1',
+                            y1: 'lat2',
                         }
                     }}
                     color={{
