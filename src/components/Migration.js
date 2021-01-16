@@ -5,6 +5,8 @@ import {useState} from "react";
 const MapboxScene = dynamic(() => import("@antv/l7-react/lib/component/MapboxScene"), {ssr: false});
 const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.LineLayer), {ssr: false});
 const PointLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.PointLayer), {ssr: false});
+const Popup = dynamic(() => import("@antv/l7-react/lib/component/Popup"), {ssr: false});
+const LayerEvent = dynamic(() => import("@antv/l7-react/lib/component/LayerEvent").then((mod) => mod.LayerEvent), {ssr: false});
 
 import data from './huge_json2.json'
 import hospitals from './hospital_json.json'
@@ -21,6 +23,14 @@ export default function Migration(props) {
         '#FCE2D7',
         '#ffffff',
     ].reverse();
+    const [popupInfo, setPopupInfo] = useState();
+    function showPopup(args) {
+        // console.log(args)
+        setPopupInfo({
+            lnglat: args.lngLat,
+            feature: args.feature,
+        });
+    }
 
     return (
         <div className="migration">
@@ -34,6 +44,18 @@ export default function Migration(props) {
                     token: 'pk.eyJ1IjoiemVuZ2Nob25nIiwiYSI6ImNrankxejBrMTA0ajYydXA4eXE4YmhnN2MifQ.0NVFgToOPeT5WKKZjC0--A',
                 }}
             >
+                {popupInfo && (
+                    <Popup lnglat={popupInfo.lnglat}>
+                        {popupInfo.feature.name}
+                        <ul
+                            style={{
+                                margin: 0,
+                            }}
+                        >
+                            <li>现有医院:{popupInfo.feature.value}</li>
+                        </ul>
+                    </Popup>
+                )}
                 {showMigrate && data && <LineLayer
                     source={{
                         data: data,
@@ -72,15 +94,11 @@ export default function Migration(props) {
                             type: "json",
                             x: 'lng',
                             y: 'lat',
-                            // value: 'value'
                         }
                     }}
                     shape={{
                         values: 'circle',
                     }}
-                    // color={{
-                    //     values: 'white'
-                    // }}
                     color={{
                         field: 'value',
                         values: (count) => {
@@ -106,10 +124,9 @@ export default function Migration(props) {
                         field: 'value',
                         values: [ 3, 20 ]
                     }}
-                    // animate={{
-                    //     option: true,
-                    // }}
-                />}
+                >
+                    <LayerEvent type="mousemove" handler={showPopup} />
+                </PointLayer>}
             </MapboxScene>
         </div>
     );
