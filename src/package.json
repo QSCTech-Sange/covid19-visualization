@@ -18,6 +18,7 @@
     "moment": "^2.29.1",
     "next": "10.0.4",
     "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react-dom": "17.0.1",
+    "react-grid-layout": "^1.2.0"
   }
 }

@@ -1,65 +1,57 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import { Responsive as ResponsiveGridLayout } from 'react-grid-layout';
+import GridLayout from 'react-grid-layout';
+
+import 'react-grid-layout/css/styles.css'
+import 'react-resizable/css/styles.css'
+import TopTen from "../components/TopTen";
+import ProvinceGDP from "../components/ProvinceGDP";
+import Migration from "../components/Migration";
+import GlobalTrend from "../components/GlobalTrend";
 
 export default function Home() {
+    const layout = [
+        {i: 'a', x: 0, y: 0, w: 9, h: 20, minH: 20, maxH: 20, minW: 9},
+        {i: 'b', x: 10, y: 0, w: 10, h: 20, minH: 20, maxH: 20,},
+        {i: 'c', x: 10, y: 10, w: 10, h: 10},
+        {i: 'd', x: 10, y: 10, w: 10, h: 10}
+    ];
+
+    const style = {
+        margin: 0,
+        padding: 0,
+        width: '100%',
+        height: '100%',
+        position: 'absolute'
+    }
+
   return (
     <div className={styles.container}>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
+        {/*<script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"/>*/}
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+          <div style={style}>
+              <GridLayout className="layout" layout={layout} cols={30} rowHeight={30} width={3000}>
+                  <div key="a">
+                      <TopTen />
+                  </div>
+                  <div key="b">
+                      <ProvinceGDP />
+                  </div>
+                  <div key="c">
+                      <Migration />
+                  </div>
+                  <div key="d">
+                      <GlobalTrend />
+                  </div>
+              </GridLayout>
+          </div>
       </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
     </div>
   )
 }
