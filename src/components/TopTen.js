@@ -16,7 +16,7 @@ export default function TopTen(props) {
 
   const getOption = (date, data) => ({
     title: {
-      text: '世界累计感染人数',
+      // text: '世界累计感染人数',
       subtext: date,
     },
     xAxis: {
@@ -78,11 +78,11 @@ export default function TopTen(props) {
   }, []);
 
   return (
-    <div className="top-ten-comp">
+    <div className="top-ten-comp" style={{ height: '100%' }}>
       {option &&
         (<ReactEcharts
           option={option}
-          style={{ height: props.height ?? 800 }} />
+          style={{ height: 'calc(100% - 40px)' }} />
         )}
     </div>
   )

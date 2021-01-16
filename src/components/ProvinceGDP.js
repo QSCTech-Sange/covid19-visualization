@@ -83,16 +83,16 @@ export default function ProvinceGDP(props) {
               color: "rgba(255, 255, 255, 0.7)",
             },
           },
-          {
-            text: "各省份产业结构转变",
-            left: "center",
-            top: 10,
-            textStyle: {
-              color: "#aaa",
-              fontWeight: "normal",
-              fontSize: 20,
-            },
-          },
+          // {
+          //   text: "各省份产业结构转变",
+          //   left: "center",
+          //   top: 10,
+          //   textStyle: {
+          //     color: "#aaa",
+          //     fontWeight: "normal",
+          //     fontSize: 20,
+          //   },
+          // },
         ],
         tooltip: {
           padding: 5,
@@ -236,9 +236,9 @@ export default function ProvinceGDP(props) {
   }, []);
 
   return (
-    <div className="Province-GDP-comp">
+    <div className="Province-GDP-comp" style={{ height: '100%' }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: props.height ?? 800 }} />
+        <ReactEcharts option={option} style={{ height: 'calc(100% - 40px)' }} />
       )}
     </div>
   );

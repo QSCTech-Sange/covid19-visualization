@@ -6,9 +6,9 @@ export default function GlobalTrend(props) {
   let [option, SetOption] = useState(undefined);
 
   const initOption = () => ({
-    title: {
-      text: '全球疫情趋势',
-    },
+    // title: {
+    //   text: '全球疫情趋势',
+    // },
     tooltip: {
       trigger: 'axis',
     },
@@ -84,10 +84,10 @@ export default function GlobalTrend(props) {
   }, []);
 
   return (
-    <div className="global-trend-comp">
+    <div className="global-trend-comp" style={{ height: '100%' }}>
       {option && (<ReactEcharts 
         option={option}
-        style={{height: props.height ?? 400}} />)
+        style={{ height: 'calc(100% - 40px)' }} />)
       }
     </div>
   );

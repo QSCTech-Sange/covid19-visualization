@@ -11,6 +11,7 @@
   "dependencies": {
     "@antv/l7": "^2.3.6",
     "@antv/l7-react": "^2.3.0",
+    "antd": "^4.10.2",
     "echarts": "^4.0.0",
     "echarts-for-react": "^2.0.16",
     "echarts-gl": "^1.1.2",

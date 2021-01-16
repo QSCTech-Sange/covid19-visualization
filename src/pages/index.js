@@ -9,12 +9,14 @@ import TopTen from "../components/TopTen";
 import ProvinceGDP from "../components/ProvinceGDP";
 import Migration from "../components/Migration";
 import GlobalTrend from "../components/GlobalTrend";
-import HospitalNum from "../components/HospitalNum";
+import { Card } from 'antd';
+
+import 'antd/dist/antd.css';
 
 export default function Home() {
     const layout = [
-        {i: 'a', x: 0, y: 0, w: 9, h: 20, minH: 20, maxH: 20, minW: 9},
-        {i: 'b', x: 10, y: 0, w: 10, h: 20, minH: 20, maxH: 20,},
+        {i: 'a', x: 0, y: 0, w: 9, h: 20,},
+        {i: 'b', x: 10, y: 0, w: 10, h: 20,},
         {i: 'c', x: 10, y: 10, w: 10, h: 10},
         {i: 'd', x: 10, y: 10, w: 10, h: 10},
         {i: 'e', x: 10, y: 10, w: 10, h: 10}
@@ -34,26 +36,34 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        <script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"/>
       </Head>
 
       <main className={styles.main}>
           <div style={style}>
               <GridLayout className="layout" layout={layout} cols={30} rowHeight={30} width={3000}>
                   <div key="a">
-                      <TopTen />
+                      <Card title="世界累计感染人数" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                          <p style={{ height: '100%' }}>
+                              <TopTen />
+                          </p>
+                      </Card>
                   </div>
                   <div key="b">
-                      <ProvinceGDP />
-                  </div>
-                  <div key="c">
                       <Migration />
                   </div>
-                  <div key="d">
-                      <GlobalTrend />
+                  <div key="c" style={{ height: '100%' }}>
+                      <Card title="各省份产业结构转变" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                          <p style={{ height: '100%' }}>
+                              <ProvinceGDP />
+                          </p>
+                      </Card>
                   </div>
-                  <div key="e">
-                      <HospitalNum />
+                  <div key="d">
+                      <Card title="全球疫情趋势" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                          <p style={{ height: '100%' }}>
+                            <GlobalTrend />
+                          </p>
+                      </Card>
                   </div>
               </GridLayout>
           </div>

@@ -12,7 +12,7 @@ import data from './huge_json2.json'
 import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
-    const [showMigrate, setShowMigrate] = useState(false)
+    const [showMigrate, setShowMigrate] = useState(true)
     const [showHospitals, setShowHospitals] = useState(true)
     const colors = [
         '#732200',

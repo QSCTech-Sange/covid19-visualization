@@ -120,3 +120,7 @@
     flex-direction: column;
   }
 }
+
+.ant-card-body {
+  height: 100%;
+}
