@@ -7,11 +7,15 @@ const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").the
 const PointLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.PointLayer), {ssr: false});
 
 import data from './huge_json2.json'
-import hospitals from './hospital_json.json'
+// import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
-    const [showMigrate, setShowMigrate] = useState(true)
-    const [showHospitals, setShowHospitals] = useState(false)
+    const [showMigrate, setShowMigrate] = useState(false)
+    const [showHospitals, setShowHospitals] = useState(true)
+
+    const hospitals = [
+        {lng1: 116.395645, lat1: 39.929986, value: 106}
+        ]
 
 
     return (
@@ -26,7 +30,7 @@ export default function Migration(props) {
                     token: 'pk.eyJ1IjoiemVuZ2Nob25nIiwiYSI6ImNrankxejBrMTA0ajYydXA4eXE4YmhnN2MifQ.0NVFgToOPeT5WKKZjC0--A',
                 }}
             >
-                {showMigrate && data && <LineLayer
+                {showMigrate && hospitals && <LineLayer
                     source={{
                         hospitals,
                         parser: {
@@ -62,8 +66,8 @@ export default function Migration(props) {
                         hospitals,
                         parser: {
                             type: "json",
-                            x: 'lng',
-                            y: 'lat',
+                            x: 'lng1',
+                            y: 'lat1',
                         }
                     }}
                     shape={{
