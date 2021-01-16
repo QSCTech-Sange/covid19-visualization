@@ -9,13 +9,15 @@ import TopTen from "../components/TopTen";
 import ProvinceGDP from "../components/ProvinceGDP";
 import Migration from "../components/Migration";
 import GlobalTrend from "../components/GlobalTrend";
+import HospitalNum from "../components/HospitalNum";
 
 export default function Home() {
     const layout = [
         {i: 'a', x: 0, y: 0, w: 9, h: 20, minH: 20, maxH: 20, minW: 9},
         {i: 'b', x: 10, y: 0, w: 10, h: 20, minH: 20, maxH: 20,},
         {i: 'c', x: 10, y: 10, w: 10, h: 10},
-        {i: 'd', x: 10, y: 10, w: 10, h: 10}
+        {i: 'd', x: 10, y: 10, w: 10, h: 10},
+        {i: 'e', x: 10, y: 10, w: 10, h: 10}
     ];
 
     const style = {
@@ -23,7 +25,8 @@ export default function Home() {
         padding: 0,
         width: '100%',
         height: '100%',
-        position: 'absolute'
+        position: 'absolute',
+        backgroundColor: "rgb(22, 21, 24)"
     }
 
   return (
@@ -31,7 +34,7 @@ export default function Home() {
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
-        {/*<script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"/>*/}
+        <script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"/>
       </Head>
 
       <main className={styles.main}>
@@ -48,6 +51,9 @@ export default function Home() {
                   </div>
                   <div key="d">
                       <GlobalTrend />
+                  </div>
+                  <div key="e">
+                      <HospitalNum />
                   </div>
               </GridLayout>
           </div>

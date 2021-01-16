@@ -5,7 +5,7 @@ export default function HospitalNumTest() {
   return (
     <div>
       <Head>
-        <script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"></script>
+        <script src="https://api.map.baidu.com/api?v=2.0&ak=Ydf7D0t1RNspYfkLRvGmOs0BPQrDU4Ar"/>
       </Head>
       <HospitalNum />
     </div>
