@@ -10,8 +10,17 @@ import data from './huge_json2.json'
 import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
-    const [showMigrate, setShowMigrate] = useState(true)
+    const [showMigrate, setShowMigrate] = useState(false)
     const [showHospitals, setShowHospitals] = useState(true)
+    const colors = [
+        '#732200',
+        '#CC3D00',
+        '#FF6619',
+        '#FF9466',
+        '#FFC1A6',
+        '#FCE2D7',
+        '#ffffff',
+    ].reverse();
 
     return (
         <div className="migration">
@@ -69,19 +78,37 @@ export default function Migration(props) {
                     shape={{
                         values: 'circle',
                     }}
+                    // color={{
+                    //     values: 'white'
+                    // }}
                     color={{
-                        values: 'white'
+                        field: 'value',
+                        values: (count) => {
+                            return count > 100
+                                ? colors[6]
+                                : count > 50
+                                    ? colors[5]
+                                    : count > 25
+                                        ? colors[4]
+                                        : count > 15
+                                            ? colors[3]
+                                            : count > 10
+                                                ? colors[2]
+                                                : count > 5
+                                                    ? colors[1]
+                                                    : colors[0];
+                        },
                     }}
                     style={{
                         opacity: 0.8,
                     }}
                     size={{
                         field: 'value',
-                        values: [ 3, 50 ]
+                        values: [ 3, 20 ]
                     }}
-                    animate={{
-                        option: true,
-                    }}
+                    // animate={{
+                    //     option: true,
+                    // }}
                 />}
             </MapboxScene>
         </div>
