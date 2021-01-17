@@ -105,7 +105,7 @@ export default function GlobalTrend(props) {
   return (
     <div className="global-trend-comp" style={{ height: '100%' }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: "calc(100% - 40px)" }} />
+        <ReactEcharts option={option} style={{ height: "100%" }} />
       )}
     </div>
   );

@@ -268,7 +268,7 @@ export default function ProvinceGDP(props) {
   return (
     <div className="Province-GDP-comp" style={{ height: "100%" }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: "calc(100% - 40px)" }} />
+        <ReactEcharts option={option} style={{ height: "100%" }} />
       )}
     </div>
   );
