@@ -1,7 +1,7 @@
 import dynamic from "next/dynamic";
 import {useState} from "react";
 
-import { Radio, DatePicker } from 'antd';
+import {Radio, DatePicker, Space} from 'antd';
 const { RangePicker } = DatePicker;
 
 // disable ssr on AntV
@@ -61,11 +61,13 @@ export default function Migration(props) {
                     token: 'pk.eyJ1IjoiemVuZ2Nob25nIiwiYSI6ImNrankxejBrMTA0ajYydXA4eXE4YmhnN2MifQ.0NVFgToOPeT5WKKZjC0--A',
                 }}
             >
-                <Radio.Group defaultValue="a" size="large" onChange={onChange}>
-                    <Radio.Button value="a">全国医院数量分布</Radio.Button>
-                    <Radio.Button value="b">全国人口流动情况</Radio.Button>
-                </Radio.Group>
-                {showMigrate && <RangePicker />}
+                <Space direction="vertical" size={12}>
+                    <Radio.Group defaultValue="a" size="large" onChange={onChange}>
+                        <Radio.Button value="a">全国医院数量分布</Radio.Button>
+                        <Radio.Button value="b">全国人口流动情况</Radio.Button>
+                    </Radio.Group>
+                    {showMigrate && <RangePicker />}
+                </Space>
                 {showHospitals && popupInfo && (
                     <Popup lnglat={popupInfo.lnglat}>
                         <p style={{ color: 'black' }}>{popupInfo.feature.name}</p>
