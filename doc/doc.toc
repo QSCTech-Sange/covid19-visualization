@@ -13,17 +13,32 @@
 \contentsline {subsubsection}{\numberline {2.2.5}各地披露数据比例}{6}%
 \contentsline {subsection}{\numberline {2.3}设计框架}{8}%
 \contentsline {subsection}{\numberline {2.4}模块规划}{8}%
-\contentsline {subsubsection}{\numberline {2.4.1}人口迁徙与医院数量分布}{8}%
-\contentsline {subsubsection}{\numberline {2.4.2}各省份产业结构变化趋势}{9}%
-\contentsline {subsubsection}{\numberline {2.4.3}患者随时间的年龄段比例}{9}%
-\contentsline {subsubsection}{\numberline {2.4.4}各个区域披露数据的比例}{9}%
-\contentsline {subsubsection}{\numberline {2.4.5}世界疫情发展趋势}{9}%
-\contentsline {subsubsection}{\numberline {2.4.6}疫情最严重的国家排名}{10}%
-\contentsline {section}{\numberline {3}案例展示}{10}%
-\contentsline {subsection}{\numberline {3.1}主面板}{10}%
-\contentsline {subsection}{\numberline {3.2}人口迁徙与医院数量分布}{13}%
-\contentsline {subsection}{\numberline {3.3}患者随时间的年龄段比例}{15}%
-\contentsline {subsection}{\numberline {3.4}各省份产业结构变化趋势}{16}%
-\contentsline {subsection}{\numberline {3.5}各个区域披露数据的比例}{17}%
-\contentsline {subsection}{\numberline {3.6}世界疫情发展趋势}{18}%
-\contentsline {subsection}{\numberline {3.7}疫情最严重的国家排名}{19}%
+\contentsline {subsubsection}{\numberline {2.4.1}总体设计}{8}%
+\contentsline {paragraph}{界面设计}{9}%
+\contentsline {paragraph}{交互设计}{9}%
+\contentsline {subsubsection}{\numberline {2.4.2}人口迁徙与医院数量分布}{9}%
+\contentsline {paragraph}{界面设计}{9}%
+\contentsline {paragraph}{交互设计}{10}%
+\contentsline {subsubsection}{\numberline {2.4.3}各省份产业结构变化趋势}{10}%
+\contentsline {paragraph}{界面设计}{10}%
+\contentsline {paragraph}{交互设计}{10}%
+\contentsline {subsubsection}{\numberline {2.4.4}患者随时间的年龄段比例}{10}%
+\contentsline {paragraph}{界面设计}{11}%
+\contentsline {paragraph}{交互设计}{11}%
+\contentsline {subsubsection}{\numberline {2.4.5}各个区域披露数据的比例}{11}%
+\contentsline {paragraph}{界面设计}{11}%
+\contentsline {paragraph}{交互设计}{11}%
+\contentsline {subsubsection}{\numberline {2.4.6}世界疫情发展趋势}{12}%
+\contentsline {paragraph}{界面设计}{12}%
+\contentsline {paragraph}{交互设计}{12}%
+\contentsline {subsubsection}{\numberline {2.4.7}疫情最严重的国家排名}{12}%
+\contentsline {paragraph}{界面设计}{12}%
+\contentsline {paragraph}{交互设计}{13}%
+\contentsline {section}{\numberline {3}案例展示}{13}%
+\contentsline {subsection}{\numberline {3.1}主面板}{13}%
+\contentsline {subsection}{\numberline {3.2}人口迁徙与医院数量分布}{16}%
+\contentsline {subsection}{\numberline {3.3}患者随时间的年龄段比例}{18}%
+\contentsline {subsection}{\numberline {3.4}各省份产业结构变化趋势}{19}%
+\contentsline {subsection}{\numberline {3.5}各个区域披露数据的比例}{20}%
+\contentsline {subsection}{\numberline {3.6}世界疫情发展趋势}{21}%
+\contentsline {subsection}{\numberline {3.7}疫情最严重的国家排名}{22}%
