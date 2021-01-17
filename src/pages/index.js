@@ -50,7 +50,7 @@ export default function Home() {
               />
               <GridLayout className="layout" layout={layout} cols={30} rowHeight={30} width={3000}>
                   <div key="a">
-                      <Card title="世界累计感染人数" extra={<a href="/tests/TopTen">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="世界累计感染人数" extra={<a href="/tests/TopX">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                               <TopX />
                           </p>
