@@ -34,7 +34,7 @@ export default function Home() {
     };
 
     const cardStyle = {
-        height: "calc(100% - 56px)",
+        height: "calc(100% - 55px)",
         background: "#242a38"
     }
 
