@@ -1,6 +1,6 @@
 import dynamic from "next/dynamic";
 import {useState} from "react";
-
+import moment from 'moment';
 import {Radio, DatePicker, Space} from 'antd';
 const { RangePicker } = DatePicker;
 
@@ -11,12 +11,13 @@ const PointLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").th
 const Popup = dynamic(() => import("@antv/l7-react/lib/component/Popup"), {ssr: false});
 const LayerEvent = dynamic(() => import("@antv/l7-react/lib/component/LayerEvent").then((mod) => mod.LayerEvent), {ssr: false});
 
-import data from './huge_json2.json'
+import data from './huge_json_all.json'
 import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
     const [showMigrate, setShowMigrate] = useState(false)
     const [showHospitals, setShowHospitals] = useState(true)
+    const [migrationData, setMigrationData] = useState()
     const colors = [
         '#732200',
         '#CC3D00',
@@ -49,6 +50,32 @@ export default function Migration(props) {
         }
     };
 
+    const onChangeDate = dates => {
+        // console.log(dates)
+        // console.log(moment(data[1].date))
+        // console.log(dates[0])
+        // console.log(moment(data[1].date) >= dates[0])
+        // console.log(moment(data[1].date) < dates[1])
+        let tempArray = []
+        const arrayLength = data.length;
+        for (let i = 0; i < arrayLength; i++) {
+            // console.log(moment(data[i].date) > dates[0])
+            if (moment(data[i].date) >= dates[0]) {
+                tempArray.push(data[i])
+                if (moment(data[i].date) > dates[1]) {
+                    break;
+                }
+            }
+        }
+        setMigrationData(tempArray)
+    }
+
+    function disabledDate(current) {
+        return current && current < Date.parse('2020-1-1 00:00:00') && current > Date.parse('2021-1-11 00:00:00');
+    }
+
+    const dateFormat = 'YYYY/MM/DD';
+
     return (
         <div className="migration">
             <MapboxScene
@@ -66,7 +93,7 @@ export default function Migration(props) {
                         <Radio.Button value="a">全国医院数量分布</Radio.Button>
                         <Radio.Button value="b">全国人口流动情况</Radio.Button>
                     </Radio.Group>
-                    {showMigrate && <RangePicker />}
+                    {showMigrate && <RangePicker onChange={onChangeDate} disabledDate={disabledDate} defaultValue={[moment('2020/01/01', dateFormat), moment('2020/01/21', dateFormat)]}/>}
                 </Space>
                 {showHospitals && popupInfo && (
                     <Popup lnglat={popupInfo.lnglat}>
@@ -81,9 +108,9 @@ export default function Migration(props) {
                         </ul>
                     </Popup>
                 )}
-                {showMigrate && data && <LineLayer
+                {showMigrate && migrationData && <LineLayer
                     source={{
-                        data: data,
+                        data: migrationData,
                         parser: {
                             type: "json",
                             x: 'lng1',
@@ -100,6 +127,10 @@ export default function Migration(props) {
                     }}
                     style={{
                         opacity: 0.8,
+                    }}
+                    size={{
+                        field: 'value',
+                        values: [ 3, 20 ]
                     }}
                     active={{
                         option: {
