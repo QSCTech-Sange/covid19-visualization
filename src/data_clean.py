@@ -94,62 +94,53 @@ a.to_json('test.json',orient='table')
 # 地点数据
 data = pd.read_excel("NCP_CnfrmdCourtDisd.xlsx")
 cleaned = []
-cleaned.append(dict())
-cleaned[0]['name'] = '中国'
-cleaned[0]['children'] = []
-cleaned[0]['value'] = 0
 
 for index,row in data.iterrows():
     if row['省份名称'] is not None:
-        cleaned[0]['value'] += row['逗留人数']
-        for i in cleaned[0]['children']:
+        for i in cleaned:
             if i['name'] == row['省份名称']:
-                i['value'] += row['逗留人数']
                 province = i
                 break
         else:
             new_dict = dict()
             new_dict['name'] = row['省份名称']
-            new_dict['value'] = row['逗留人数']
             new_dict['children'] = []
-            cleaned[0]['children'].append(new_dict.copy())
-            province = cleaned[0]['children'][-1]
+            cleaned.append(new_dict.copy())
+            province = cleaned[-1]
     if row['城市名称'] is not None:
         for i in province['children']:
             if i['name'] == row['城市名称']:
-                i['value'] += row['逗留人数']
-                # city = i
+                city = i
                 break
         else:
             new_dict = dict()
             new_dict['name'] = row['城市名称']
-            new_dict['value'] = row['逗留人数']
             new_dict['children'] = []
             province['children'].append(new_dict.copy())
             city = province['children'][-1]
+
     if row['县/区名称'] is not None:
         for i in city['children']:
             if i['name'] == row['县/区名称']:
-                i['value'] += row['逗留人数']
-                xian = i
+                # xian = i
                 break
         else:
             new_dict = dict()
             new_dict['name'] = row['县/区名称']
             new_dict['value'] = row['逗留人数']
-            new_dict['children'] = []
+            # new_dict['children'] = []
             city['children'].append(new_dict.copy())
-            xian = city['children'][-1]
-    if row['逗留地点'] is not None:
-        for i in xian['children']:
-            if i['name'] == row['逗留地点']:
-                i['value'] += row['逗留人数']
-                break
-        else:
-            new_dict = dict()
-            new_dict['name'] = row['逗留地点']
-            new_dict['value'] = row['逗留人数']
-            xian['children'].append(new_dict.copy())
+            # xian = city['children'][-1]
+
+    # if row['逗留地点'] is not None:
+    #     for i in xian['children']:
+    #         if i['name'] == row['逗留地点']:
+    #             break
+    #     else:
+    #         new_dict = dict()
+    #         new_dict['name'] = row['逗留地点']
+    #         new_dict['value'] = row['逗留人数']
+    #         xian['children'].append(new_dict.copy())
 
 
 with open('tmp.json',mode='x',encoding='utf-8') as f:

@@ -11,7 +11,7 @@ export default function AgePatients(props) {
       axisPointer: {
         type: "line",
         lineStyle: {
-          color: "rgba(0,0,0,0.2)",
+          color: "#FFF",
           width: 1,
           type: "solid",
         },
@@ -20,6 +20,9 @@ export default function AgePatients(props) {
 
     legend: {
       data: ["儿童", "青壮年", "中年", "中老年", "老年"],
+      textStyle: {
+        color: "#FFF"
+      },
     },
 
     singleAxis: {
@@ -28,6 +31,11 @@ export default function AgePatients(props) {
       axisTick: {},
       axisLabel: {},
       type: "time",
+      axisLabel:{
+        textStyle: {
+          color: "#FFF"
+        },
+      },
       axisPointer: {
         animation: true,
         label: {
@@ -49,10 +57,13 @@ export default function AgePatients(props) {
         emphasis: {
           itemStyle: {
             shadowBlur: 20,
-            shadowColor: "rgba(0, 0, 0, 0.8)",
+            shadowColor: "#fff",
           },
         },
         data: data,
+        textStyle: {
+          color: "#FFF"
+        },
       },
     ],
   });

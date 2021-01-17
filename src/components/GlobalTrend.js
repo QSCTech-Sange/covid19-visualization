@@ -14,6 +14,9 @@ export default function GlobalTrend(props) {
     },
     legend: {
       data: ['累计确诊', '新增确诊'],
+      textStyle: {
+        color: "#FFF"
+      },
     },
     toolbox: {
       show: true,
@@ -32,16 +35,31 @@ export default function GlobalTrend(props) {
       {
         type: 'time',
         boundaryGap: false,
+        axisLabel:{
+          textStyle: {
+            color: "#FFF"
+          },
+        }
       },
     ],
     yAxis: [
       {
         type: 'value',
         name: '人数',
+        axisLabel:{
+          textStyle: {
+            color: "#FFF"
+          },
+        }
       },
       {
         type: 'value',
         name: '人数',
+        axisLabel:{
+          textStyle: {
+            color: "#FFF"
+          },
+        }
       },
     ],
     series: [

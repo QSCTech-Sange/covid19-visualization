@@ -10,7 +10,7 @@ export default function ProvinceCase(props) {
     visualMap: {
       type: "continuous",
       min: 0,
-      max: 10,
+      max: 200,
       inRange: {
         color: ["#2D5F73", "#538EA6", "#F2D1B3", "#F2B8A2", "#F28C8C"],
       },
@@ -18,13 +18,10 @@ export default function ProvinceCase(props) {
     series: {
       type: "sunburst",
       data: mini,
+      label:{minAngle:40},
       radius: [0, "90%"],
-      label: [
-        {
-          rotate: "radial",
-        },
-      ]
-    },
+      opacity: 0.7,
+      }
   });
 
   useEffect(() => {
@@ -32,9 +29,9 @@ export default function ProvinceCase(props) {
   }, []);
 
   return (
-    <div className="province-case-comp" style={{ height: '100%' }}>
+    <div className="province-case-comp" style={{ height: "100%" }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: 'calc(100% - 40px)'}} />
+        <ReactEcharts option={option} style={{ height: "calc(100% - 40px)" }} />
       )}
     </div>
   );

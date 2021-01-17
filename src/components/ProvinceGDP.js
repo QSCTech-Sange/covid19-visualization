@@ -15,7 +15,7 @@ export default function ProvinceGDP(props) {
   };
 
   let sizeFunction = function (x) {
-    let y = Math.sqrt(x / 8e3) + 0.1;
+    let y = Math.sqrt(x / 8e4) + 0.1;
     return y * 90;
   };
 
@@ -71,15 +71,15 @@ export default function ProvinceGDP(props) {
           },
           data: [],
         },
-        backgroundColor: "#404a59",
+        backgroundColor: "#242a38",
         title: [
           {
             text: data.timeline[0],
             textAlign: "center",
-            left: "83%",
-            top: "75%",
+            left: "70%",
+            top: "70%",
             textStyle: {
-              fontSize: 100,
+              fontSize: 50,
               color: "rgba(255, 255, 255, 0.7)",
             },
           },
