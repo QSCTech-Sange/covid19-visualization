@@ -46,10 +46,11 @@ export default function Migration(props) {
             >
                 {popupInfo && (
                     <Popup lnglat={popupInfo.lnglat}>
-                        {popupInfo.feature.name}
+                        <p style={{ color: 'black' }}>{popupInfo.feature.name}</p>
                         <ul
                             style={{
                                 margin: 0,
+                                color: 'black'
                             }}
                         >
                             <li>现有医院:{popupInfo.feature.value}</li>

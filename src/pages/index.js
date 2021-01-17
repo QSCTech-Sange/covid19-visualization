@@ -12,7 +12,7 @@ import AgePatients from "../components/AgePatients";
 import ProvinceCase from "../components/ProvinceCase";
 import {Card, PageHeader} from 'antd';
 
-import 'antd/dist/antd.css';
+import 'antd/dist/antd.dark.css';
 import styles from '../styles/Home.module.css'
 
 export default function Home() {
@@ -31,7 +31,6 @@ export default function Home() {
         width: '100%',
         height: '100%',
         position: 'absolute',
-        backgroundColor: "rgb(22, 21, 24)"
     }
 
   return (
