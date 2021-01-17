@@ -4,7 +4,7 @@ import GridLayout from 'react-grid-layout';
 
 import 'react-grid-layout/css/styles.css'
 import 'react-resizable/css/styles.css'
-import TopTen from "../components/TopTen";
+import TopX from "../components/TopX";
 import ProvinceGDP from "../components/ProvinceGDP";
 import Migration from "../components/Migration";
 import GlobalTrend from "../components/GlobalTrend";
@@ -52,7 +52,7 @@ export default function Home() {
                   <div key="a">
                       <Card title="世界累计感染人数" extra={<a href="/tests/TopTen">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
-                              <TopTen />
+                              <TopX />
                           </p>
                       </Card>
                   </div>

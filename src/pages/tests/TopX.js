@@ -1,11 +1,11 @@
 import dynamic from 'next/dynamic';
 
-const ClientTopTen = dynamic(() => import('components/TopTen'), { ssr: false });
+const ClientTopX = dynamic(() => import('components/TopX'), { ssr: false });
 
 export default function TopTenTest() {
     return (
         <div style={{ height: '800px' }}>
-            <ClientTopTen />
+            <ClientTopX number="20" />
         </div>
     );
 }

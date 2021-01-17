@@ -1,7 +1,7 @@
 import ReactEcharts from 'echarts-for-react';
 import { useEffect, useState } from 'react';
 import moment from 'moment';
-import data from './all_acc.json';
+import data from './topten.json';
 
 let countries;
 let countryColors;
@@ -9,10 +9,11 @@ let length;
 let timeTicket;
 let i;
 
-export default function TopTen(props) {
+export default function TopX(props) {
   let [option, setOption] = useState(undefined);
 
   const animationInterval = props.interval ?? 300;
+  const number = props.number ?? 10;
 
   const getOption = (date, data) => ({
     title: {
@@ -56,23 +57,21 @@ export default function TopTen(props) {
 
   useState(() => {
     try {
+      console.log(data);
       countries = Object.keys(data);
       countryColors = countries.map(() => '#' + Math.random().toString(16).substr(2, 6));
       length = data[countries[0]].length;
 
       i = 0;
       let dayRank = countries.map((v, j) => [v, data[v][i][1], countryColors[j]]).sort((a, b) => b[1] - a[1]);
-      dayRank.shift();
-      setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, 10).reverse()));
+      setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, number).reverse()));
       ++i;
 
       timeTicket = setInterval(() => {
         let dayRank = countries.map((v, j) => [v, data[v][i][1], countryColors[j]]).sort((a, b) => b[1] - a[1]);
-        dayRank.shift();
-        setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, 10).reverse()));
+        setOption(getOption(moment(data[countries[0]][i][0]).format('ll'), dayRank.slice(0, number).reverse()));
         ++i;
-        // 后面的数据洗错了，干脆不要了 XD
-        if (i === length - 5) {
+        if (i === length - 1) {
           clearInterval(timeTicket);
         }
       }, animationInterval);
