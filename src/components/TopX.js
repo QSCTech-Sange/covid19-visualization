@@ -14,8 +14,8 @@ export default function TopX(props) {
 
   const animationInterval = props.interval ?? 300;
   const number = props.number ?? 10;
-
   const getOption = (date, data) => ({
+    backgroundColor:"#242a38",
     title: {
       // text: '世界累计感染人数',
       subtext: date,
@@ -98,7 +98,8 @@ export default function TopX(props) {
         );
         ++i;
         if (i === length - 1) {
-          clearInterval(timeTicket);
+          i = 0;
+          // clearInterval(timeTicket);
         }
       }, animationInterval);
     } catch (e) {}

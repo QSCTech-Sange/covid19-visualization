@@ -1,7 +1,9 @@
-import GlobalTrend from 'components/GlobalTrend';
+import GlobalTrend from "components/GlobalTrend";
 
 export default function GlobalTrendTest() {
-    return (
-        <GlobalTrend isTest={{}}/>
-    );
+  return (
+    <div style={{ height: "1000px" }}>
+      <GlobalTrend isTest={{}} />
+    </div>
+  );
 }

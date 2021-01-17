@@ -1,7 +1,9 @@
-import AgePatients from 'components/AgePatients';
+import AgePatients from "components/AgePatients";
 
 export default function AgePatientsTest() {
-    return (
-        <AgePatients isTest={{}} />
-    );
+  return (
+    <div style={{ height: "1000px" }}>
+      <AgePatients isTest={{}} />
+    </div>
+  );
 }

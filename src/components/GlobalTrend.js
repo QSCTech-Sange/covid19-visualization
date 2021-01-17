@@ -9,6 +9,7 @@ export default function GlobalTrend(props) {
     // title: {
     //   text: '全球疫情趋势',
     // },
+    backgroundColor:"#242a38",
     tooltip: {
       trigger: 'axis',
     },
@@ -103,10 +104,9 @@ export default function GlobalTrend(props) {
 
   return (
     <div className="global-trend-comp" style={{ height: '100%' }}>
-      {option && (<ReactEcharts 
-        option={option}
-        style={ props.isTest ?? { height: 'calc(100% - 40px)' }} />)
-      }
+      {option && (
+        <ReactEcharts option={option} style={{ height: "calc(100% - 40px)" }} />
+      )}
     </div>
   );
 }

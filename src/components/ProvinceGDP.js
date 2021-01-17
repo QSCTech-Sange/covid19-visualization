@@ -3,9 +3,9 @@ import { useEffect, useState } from "react";
 import data from "./ProvinceGDP.json";
 
 export default function ProvinceGDP(props) {
-
   let [option, SetOption] = useState(undefined);
-
+  const big = props.big ?? "0";
+  const size = props.size ?? "0";
   let itemStyle = {
     opacity: 0.8,
     shadowBlur: 10,
@@ -14,21 +14,35 @@ export default function ProvinceGDP(props) {
     shadowColor: "rgba(0, 0, 0, 0.5)",
   };
 
-  let sizeFunction = function (x) {
-    let y = Math.sqrt(x / 8e4) + 0.1;
-    return y * 90;
-  };
+  let sizeFunction;
+  if (size === "0") {
+    sizeFunction = function (x) {
+      let y = Math.sqrt(x / 8e4) + 0.1;
+      return y * 90;
+    };
+  } else {
+    sizeFunction = function (x) {
+      let y = Math.sqrt(x / 5e3) + 0.1;
+      return y * 90;
+    };
+  }
 
   // Schema:
   let schema = [
     { name: "Primary", index: 0, text: "地区生产总值-第一产业", unit: "亿元" },
-    { name: "Secondary", index: 1, text: "地区生产总值-第二产业", unit: "亿元" },
+    {
+      name: "Secondary",
+      index: 1,
+      text: "地区生产总值-第二产业",
+      unit: "亿元",
+    },
     { name: "Tertiary", index: 2, text: "地区生产总值-第三产业", unit: "亿元" },
     { name: "Province", index: 3, text: "省份", unit: "" },
   ];
 
   const initOption = function () {
     const option = {
+      backgroundColor:"#242a38",
       baseOption: {
         timeline: {
           axisType: "category",
@@ -76,10 +90,10 @@ export default function ProvinceGDP(props) {
           {
             text: data.timeline[0],
             textAlign: "center",
-            left: "70%",
-            top: "70%",
+            left: big === "1" ? "80%" : "70%",
+            top: big === "1" ? "80%" : "70%",
             textStyle: {
-              fontSize: 50,
+              fontSize: big === "1" ? 150 : 50,
               color: "rgba(255, 255, 255, 0.7)",
             },
           },
@@ -102,10 +116,26 @@ export default function ProvinceGDP(props) {
           formatter: function (obj) {
             var value = obj.value;
             return (
-              schema[3].text + "：" + value[3] + "<br>" +
-              schema[0].text + "：" + value[0] + schema[0].unit + "<br>" +
-              schema[1].text + "：" + value[1] + schema[1].unit + "<br>" +
-              schema[2].text + "：" + value[2] + schema[2].unit + "<br>");
+              schema[3].text +
+              "：" +
+              value[3] +
+              "<br>" +
+              schema[0].text +
+              "：" +
+              value[0] +
+              schema[0].unit +
+              "<br>" +
+              schema[1].text +
+              "：" +
+              value[1] +
+              schema[1].unit +
+              "<br>" +
+              schema[2].text +
+              "：" +
+              value[2] +
+              schema[2].unit +
+              "<br>"
+            );
           },
         },
         grid: {
@@ -236,12 +266,9 @@ export default function ProvinceGDP(props) {
   }, []);
 
   return (
-    <div className="Province-GDP-comp" style={{ height: '100%' }}>
+    <div className="Province-GDP-comp" style={{ height: "100%" }}>
       {option && (
-        <ReactEcharts
-          option={option}
-          style={props.isTest ?? { height: "calc(100% - 40px)" }}
-        />
+        <ReactEcharts option={option} style={{ height: "calc(100% - 40px)" }} />
       )}
     </div>
   );

@@ -1,7 +1,9 @@
-import ProvinceCase from 'components/ProvinceCase';
+import ProvinceCase from "components/ProvinceCase";
 
 export default function ProvinceCaseTest() {
-    return (
-        <ProvinceCase isTest={{}}/>
-    );
+  return (
+    <div style={{ height: "1000px" }}>
+      <ProvinceCase isTest={{}} />
+    </div>
+  );
 }
