@@ -5,7 +5,7 @@ import large from "./ProvinceCaseLarge.json";
 
 export default function ProvinceCase(props) {
   let [option, SetOption] = useState(undefined);
-
+  const big = props.big ?? "0";
   const initOption = () => ({
     backgroundColor:"#242a38",
     visualMap: {
@@ -19,7 +19,8 @@ export default function ProvinceCase(props) {
     series: {
       type: "sunburst",
       data: mini,
-      label:{minAngle:40},
+      label:{
+        minAngle:big==="1"?20:40},
       radius: [0, "90%"],
       opacity: 0.7,
       }
