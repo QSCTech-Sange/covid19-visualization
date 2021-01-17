@@ -3,6 +3,7 @@
 \usepackage{geometry}
 \usepackage{listings}
 \usepackage{color}
+\usepackage{float}
 \usepackage{pythonhighlight}
 
 \title{产业结构与人口迁徙——新冠疫情潜在影响与次生灾害分析}
@@ -249,16 +250,85 @@ with open('tmp.json',mode='x',encoding='utf-8') as f:
 \section{案例展示}
 \subsection{主面板}
 在我们的主面板当中，我们依次分模块展现了人口迁徙与医院数量分布、患者随时间的年龄段比例、各省份产业结构变化趋势、各个区域披露数据的比例、世界疫情发展趋势和疫情最严重的国家排名。同时，我们的模块支持非常高度的自由度，各个模块之间可以自由排列布局。同时，模块可以调整显示的大小，方便用户聚焦自己想关注的内容。点击 more 按钮可以查看各个组件的大图。
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/panel}
+    \caption{主面板界面}
+    \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/paneldrag}
+    \caption{主面板界面元素缩放}
+    \label{}
+\end{figure}
+\newpage
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/panelmore}
+    \caption{主面板界面元素放大到全屏}
+    \label{}
+\end{figure}
+\newpage
 \subsection{人口迁徙与医院数量分布}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/hospitalNum}
+    \caption{医院数量分布}
+    \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/gather}
+    \caption{人口迁徙分布}
+    \label{}
+\end{figure}
 我们可以看到，人口迁徙还是体现了区域的集聚性，并不是大规模大距离的迁徙，即便是春运期间。同时，迁移方向和医院的分布并没有显著的相关性。在切换迁徙时间的过程当中，我们可以看到，在春运期间区域积聚相对不明显，迁移较大，而其他时间积聚显著多于春运期间。可以看出，往东南沿海城市和往省会城市迁徙仍然是占据了比较大的迁移比重。
 \subsection{患者随时间的年龄段比例}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/age}
+    \caption{患者随时间的年龄段比例分布}
+    \label{}
+\end{figure}
 从数量上可以看出，我国的疫情在年初达到了一波高峰，但是很短暂，很快就控制了疫情。从不同颜色的河流可以看出，疫情的发展态势没有明显改变到不同年龄段受疫情的影响。同时，各个年龄段受疫情的影响也没有显著的差异。由此可以看出，各个年龄段都容易感染新冠肺炎，各个年龄段都应该注意好防护，万万不可掉以轻心。
 \subsection{各省份产业结构变化趋势}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/GDP}
+    \caption{各省份产业结构变化趋势}
+    \label{}
+\end{figure}
 我们可以看到在经济发展的重要转型时期，例如改革开放，整个图的格局会发生比较大的变化。从2010到2020年几年间，各个省份位于坐标轴上的位置相对固定。可以预见的是，以第一产业第二产业为核心的省份，收到经济冲击较大，而以北京、上海等发达城市以第三产业为主，相对影响较小。同时，从客观的角度来讲，疫情加速了企业线上办公的进程，促进了产业的转型。由于2020年的完整GDP数据还没有公布，我们只能做一个初步预期，同时在统计局公布后（1/18）将数据集放进去可以和我们的猜想进行交叉验证。
 \subsection{各个区域披露数据的比例}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/sunburst}
+    \caption{各省份产业结构变化趋势}
+    \label{}
+\end{figure}
 借助颜色和形状的视觉通道，我们可以看到各个省份的披露患者数据的比例，为了更好地应对疫情的蔓延趋势，各个省份对于每一位病患所在区域进行严格把控。然而，疫情初期，很多对于疫情的追踪并不到位。从图中可以看出，尽快湖北是中国疫情最为严重的区域，但是其披露的数据仅仅只有全部披露数据的四分之一。这也印证了疫情初期的披露数据还有提升的空间。
 \subsection{世界疫情发展趋势}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/worldtrend}
+    \caption{世界疫情发展趋势}
+    \label{}
+\end{figure}
 从图中可以看出，世界的疫情发展态势截止到目前为止依然是不容乐观，确诊人数长期处于上升状态。可以预计，在未来很长一段时间里，疫情都将是一个常态，成为生活当中尤其是有国外交流需求的生活当中的一个重要组成部分。同时，在经济上，也将持续影响着我们的生活，带来经济下行压力和客观上促进经济转型。
 \subsection{疫情最严重的国家排名}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/begin}
+    \caption{2020年3月份各国疫情状态}
+    \label{}
+\end{figure}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{img/end}
+    \caption{2021年1月份各国疫情状态}
+    \label{}
+\end{figure}
 从变化的数据可以看出，尽管中国在早期是疫情最为严重的国家，但是很快就控制住了疫情。然而以美国为首的很多西方国家对于疫情没有足够的危机意识，即便在有中国的先例之后依然没有很好地控制住疫情，严重拖累了世界范围内疫情的诊断治疗，并且持续了非常长的一段时间，直至今天。疫情国家的排名变化非常具有对比和冲击力，尤其是中国慢慢推出排行榜的过程和美国不断霸榜并远超第二名。
 \end{document}

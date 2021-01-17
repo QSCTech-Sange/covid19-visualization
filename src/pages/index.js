@@ -101,7 +101,7 @@ export default function Home() {
                         </div>
                         <div key="e">
                             <Card
-                                title="各省感染年龄分布"
+                                title="患者随时间的年龄段比例"
                                 extra={<a href="/tests/AgePatients">More</a>}
                                 style={{height: "100%"}}
                                 bodyStyle={cardStyle}

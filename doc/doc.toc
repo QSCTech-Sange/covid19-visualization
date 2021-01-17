@@ -21,9 +21,9 @@
 \contentsline {subsubsection}{\numberline {2.4.6}疫情最严重的国家排名}{10}%
 \contentsline {section}{\numberline {3}案例展示}{10}%
 \contentsline {subsection}{\numberline {3.1}主面板}{10}%
-\contentsline {subsection}{\numberline {3.2}人口迁徙与医院数量分布}{10}%
-\contentsline {subsection}{\numberline {3.3}患者随时间的年龄段比例}{10}%
-\contentsline {subsection}{\numberline {3.4}各省份产业结构变化趋势}{10}%
-\contentsline {subsection}{\numberline {3.5}各个区域披露数据的比例}{11}%
-\contentsline {subsection}{\numberline {3.6}世界疫情发展趋势}{11}%
-\contentsline {subsection}{\numberline {3.7}疫情最严重的国家排名}{11}%
+\contentsline {subsection}{\numberline {3.2}人口迁徙与医院数量分布}{13}%
+\contentsline {subsection}{\numberline {3.3}患者随时间的年龄段比例}{15}%
+\contentsline {subsection}{\numberline {3.4}各省份产业结构变化趋势}{16}%
+\contentsline {subsection}{\numberline {3.5}各个区域披露数据的比例}{17}%
+\contentsline {subsection}{\numberline {3.6}世界疫情发展趋势}{18}%
+\contentsline {subsection}{\numberline {3.7}疫情最严重的国家排名}{19}%
