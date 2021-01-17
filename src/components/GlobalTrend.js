@@ -1,6 +1,6 @@
 import ReactEcharts from "echarts-for-react";
 import { useEffect, useState } from "react";
-import data from './globalTrend.json';
+import data from './globalTrendNew.json';
 
 export default function GlobalTrend(props) {
   let [option, SetOption] = useState(undefined);
@@ -87,7 +87,7 @@ export default function GlobalTrend(props) {
     <div className="global-trend-comp" style={{ height: '100%' }}>
       {option && (<ReactEcharts 
         option={option}
-        style={{ height: 'calc(100% - 40px)' }} />)
+        style={ props.isTest ?? { height: 'calc(100% - 40px)' }} />)
       }
     </div>
   );

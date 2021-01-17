@@ -57,7 +57,6 @@ export default function TopX(props) {
 
   useState(() => {
     try {
-      console.log(data);
       countries = Object.keys(data);
       countryColors = countries.map(() => '#' + Math.random().toString(16).substr(2, 6));
       length = data[countries[0]].length;
