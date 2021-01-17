@@ -21,7 +21,7 @@ export default function AgePatients(props) {
     legend: {
       data: ["儿童", "青壮年", "中年", "中老年", "老年"],
       textStyle: {
-        color: "#FFF"
+        color: "#FFF",
       },
     },
 
@@ -31,9 +31,9 @@ export default function AgePatients(props) {
       axisTick: {},
       axisLabel: {},
       type: "time",
-      axisLabel:{
+      axisLabel: {
         textStyle: {
-          color: "#FFF"
+          color: "#FFF",
         },
       },
       axisPointer: {
@@ -62,7 +62,7 @@ export default function AgePatients(props) {
         },
         data: data,
         textStyle: {
-          color: "#FFF"
+          color: "#FFF",
         },
       },
     ],
@@ -73,9 +73,12 @@ export default function AgePatients(props) {
   }, []);
 
   return (
-    <div className="age-patients-comp" style={{ height: '100%' }}>
+    <div className="age-patients-comp" style={{ height: "100%" }}>
       {option && (
-        <ReactEcharts option={option} style={{ height: 'calc(100% - 40px)'}} />
+        <ReactEcharts
+          option={option}
+          style={props.isTest ?? { height: "calc(100% - 40px)" }}
+        />
       )}
     </div>
   );
