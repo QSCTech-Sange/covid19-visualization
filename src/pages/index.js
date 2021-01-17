@@ -60,28 +60,28 @@ export default function Home() {
                       <Migration />
                   </div>
                   <div key="c" style={{ height: '100%' }}>
-                      <Card title="各省份产业结构转变" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="各省份产业结构转变" extra={<a href="/tests/ProvinceGDP">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                               <ProvinceGDP />
                           </p>
                       </Card>
                   </div>
                   <div key="d">
-                      <Card title="全球疫情趋势" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="全球疫情趋势" extra={<a href="/tests/GlobalTrend">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                             <GlobalTrend />
                           </p>
                       </Card>
                   </div>
                   <div key="e">
-                      <Card title="各省感染年龄分布" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="各省感染年龄分布" extra={<a href="/tests/AgePatients">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                               <AgePatients />
                           </p>
                       </Card>
                   </div>
                   <div key="f">
-                      <Card title="各地区感染人数" extra={<a href="#">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
+                      <Card title="各地区感染人数" extra={<a href="/tests/ProvinceCase">More</a>} style={{ height: '100%' }} bodyStyle={{ height: '100%'}}>
                           <p style={{ height: '100%' }}>
                               <ProvinceCase />
                           </p>

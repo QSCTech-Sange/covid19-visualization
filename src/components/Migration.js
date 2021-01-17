@@ -1,6 +1,9 @@
 import dynamic from "next/dynamic";
 import {useState} from "react";
 
+import { Radio, DatePicker } from 'antd';
+const { RangePicker } = DatePicker;
+
 // disable ssr on AntV
 const MapboxScene = dynamic(() => import("@antv/l7-react/lib/component/MapboxScene"), {ssr: false});
 const LineLayer = dynamic(() => import("@antv/l7-react/lib/component/Layer").then((mod) => mod.LineLayer), {ssr: false});
@@ -12,7 +15,7 @@ import data from './huge_json2.json'
 import hospitals from './hospital_json.json'
 
 export default function Migration(props) {
-    const [showMigrate, setShowMigrate] = useState(true)
+    const [showMigrate, setShowMigrate] = useState(false)
     const [showHospitals, setShowHospitals] = useState(true)
     const colors = [
         '#732200',
@@ -32,6 +35,20 @@ export default function Migration(props) {
         });
     }
 
+    const onChange = e => {
+        // console.log('radio checked', e.target.value);
+        switch(e.target.value) {
+            case 'a':
+                setShowMigrate(false);
+                setShowHospitals(true);
+                break;
+            case 'b':
+                setShowMigrate(true);
+                setShowHospitals(false);
+                break;
+        }
+    };
+
     return (
         <div className="migration">
             <MapboxScene
@@ -44,7 +61,12 @@ export default function Migration(props) {
                     token: 'pk.eyJ1IjoiemVuZ2Nob25nIiwiYSI6ImNrankxejBrMTA0ajYydXA4eXE4YmhnN2MifQ.0NVFgToOPeT5WKKZjC0--A',
                 }}
             >
-                {popupInfo && (
+                <Radio.Group defaultValue="a" size="large" onChange={onChange}>
+                    <Radio.Button value="a">全国医院数量分布</Radio.Button>
+                    <Radio.Button value="b">全国人口流动情况</Radio.Button>
+                </Radio.Group>
+                {showMigrate && <RangePicker />}
+                {showHospitals && popupInfo && (
                     <Popup lnglat={popupInfo.lnglat}>
                         <p style={{ color: 'black' }}>{popupInfo.feature.name}</p>
                         <ul
