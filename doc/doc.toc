@@ -12,8 +12,8 @@
 \contentsline {subsubsection}{\numberline {2.2.4}患者年龄分布数据}{6}%
 \contentsline {subsubsection}{\numberline {2.2.5}各地披露数据比例}{6}%
 \contentsline {subsection}{\numberline {2.3}设计框架}{8}%
-\contentsline {subsection}{\numberline {2.4}模块规划}{8}%
-\contentsline {subsubsection}{\numberline {2.4.1}总体设计}{8}%
+\contentsline {subsection}{\numberline {2.4}模块规划}{9}%
+\contentsline {subsubsection}{\numberline {2.4.1}总体设计}{9}%
 \contentsline {paragraph}{界面设计}{9}%
 \contentsline {paragraph}{交互设计}{9}%
 \contentsline {subsubsection}{\numberline {2.4.2}人口迁徙与医院数量分布}{9}%
