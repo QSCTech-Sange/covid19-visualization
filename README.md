@@ -1,4 +1,4 @@
-# conv19-vis
+# covid19-vis
 
 信息可视化大作业
 
