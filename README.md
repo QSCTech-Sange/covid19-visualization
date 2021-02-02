@@ -1,4 +1,4 @@
-# covid19-vis
+# covid19-visualization
 
 信息可视化大作业
 
