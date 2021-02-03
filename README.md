@@ -20,3 +20,8 @@ cd src
 npm install
 npm run dev
 ```
+
+## 效果
+
+![](doc\img\panel.jpg)
+
