@@ -23,5 +23,5 @@ npm run dev
 
 ## 效果
 
-![](doc\img\panel.jpg)
+![](doc/img/panel.jpg)
 
