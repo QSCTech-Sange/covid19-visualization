@@ -4,7 +4,7 @@
 
 产业结构与人口迁徙——新冠疫情潜在影响与次生灾害分析
 
-[在线 Demo](https://covid19-visualization-git-master.ncj.vercel.app/)
+[Online Demo](http://covid19-visualization.ncj.vercel.app/)
 
 ## 目录结构
 
