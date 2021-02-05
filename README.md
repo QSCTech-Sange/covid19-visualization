@@ -17,8 +17,8 @@
 
 ```shell
 cd src
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 ## 效果
