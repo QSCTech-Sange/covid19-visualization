@@ -2,8 +2,9 @@
 
 信息可视化大作业
 
-产业结构与人口迁徙——新冠疫情潜在影响与次生灾
-害分析
+产业结构与人口迁徙——新冠疫情潜在影响与次生灾害分析
+
+[Online Demo](http://covid19-visualization.ncj.vercel.app/)
 
 ## 目录结构
 
@@ -17,8 +18,8 @@
 
 ```shell
 cd src
-npm install
-npm run dev
+yarn install
+yarn dev
 ```
 
 ## 效果
